@@ -1,5 +1,7 @@
 ATENCAO!
 
 o meu jogo adiciona dois "5" no final do arquivo numeros.txt para facilitar a condicao de parada. Demais informacoes estao
-na aba instrucoes.
-O arquivo ranking.bin e criado apos a primeira partida. 
+na aba instrucoes dentro do jogo.
+O arquivo ranking.bin e criado apos a primeira partida e ordena de forma decrescente o ranking.
+
+caso o ranking seja zerado, a nova pontuacao sera computada apenas depois de uma nova partida ser COMPLETA(perde ou ganha).
