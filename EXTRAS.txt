@@ -1,4 +1,5 @@
 ATENCAO!
 
-o meu jogo adiciona dois "5" no final do arquivo numeros.txt para facilitar a condicao de parada. Demais instrucoes estao
+o meu jogo adiciona dois "5" no final do arquivo numeros.txt para facilitar a condicao de parada. Demais informacoes estao
 na aba instrucoes.
+O arquivo ranking.bin e criado apos a primeira partida. 
