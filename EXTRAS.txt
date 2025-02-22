@@ -1,0 +1,4 @@
+ATENCAO!
+
+o meu jogo adiciona dois "5" no final do arquivo numeros.txt para facilitar a condicao de parada. Demais instrucoes estao
+na aba instrucoes.
