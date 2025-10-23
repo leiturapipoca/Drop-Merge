@@ -1,45 +1,35 @@
-# 🧮 Dpop Meros — Clone de 2048 Vertical em C
+🎮 Dpop Meros - Um Híbrido de Tetris e 2048 em C
+Bem-vindo ao Dpop Meros! Este é um projeto de jogo de puzzle desenvolvido em C puro, que combina a mecânica de queda de blocos do Tetris com a lógica de fusão de números do 2048. O projeto foi criado como um exercício acadêmico para aprofundar conhecimentos em algoritmos, manipulação de arquivos e os fundamentos do desenvolvimento de jogos no terminal.
 
-**Dpop Meros** é um jogo desenvolvido em **C**, inspirado no clássico *2048*, porém com uma dinâmica **vertical**, sistema de **pontuação multiplicativa** e um **ranking binário persistente**.  
-O jogador posiciona blocos numéricos em colunas e, quando números iguais se tocam, eles se fundem multiplicando seus valores.  
-A cada 10.000 pontos, o jogador ganha um **martelo** para quebrar blocos indesejados.
+🎯 O Objetivo
+O objetivo é simples: impedir que a grade de 10x5 seja completamente preenchida! Para isso, você deve posicionar os números que caem de forma estratégica, combinando-os com números idênticos adjacentes. Cada fusão gera um novo número e mais pontos, limpando espaço no tabuleiro e permitindo que o jogo continue.
 
----
+✨ Funcionalidades Principais
+Mecânica de Fusão Dinâmica 🧠: Ao posicionar um bloco, ele verifica seus vizinhos (embaixo, à esquerda e à direita). Se houver blocos com o mesmo número, eles se fundem!
 
-## 📚 Sumário
+Sistema de Pontuação Exponencial 📈: A pontuação é calculada com base na quantidade de blocos fundidos de uma só vez. O novo bloco terá seu valor multiplicado por 2 elevado ao número de vizinhos combinados (novo_valor = valor_original * 2^vizinhos), incentivando combos maiores!
 
-- [🎮 Funcionalidades Principais](#-funcionalidades-principais)
-- [🧩 Estrutura do Projeto](#-estrutura-do-projeto)
-- [🧠 Estrutura de Dados](#-estrutura-de-dados)
-- [⚙️ Principais Funções](#️-principais-funções)
-- [💥 Regras de Fusão](#-regras-de-fusão)
-- [🧱 Sistema de Martelos](#-sistema-de-martelos)
-- [🏆 Ranking](#-ranking)
-- [🧹 Interface e Exibição](#-interface-e-exibição)
-- [🧑‍💻 Tecnologias Usadas](#-tecnologias-usadas)
-- [📸 Exemplo de Saída](#-exemplo-de-saída)
-- [🧾 Licença](#-licença)
+Combos em Cascata 💥: Uma única jogada pode criar uma reação em cadeia! Após uma fusão, o novo bloco pode se fundir novamente com seus novos vizinhos, levando a reviravoltas emocionantes.
 
----
+Ferramenta Martelo 🔨: A cada 10.000 pontos, você ganha um "martelo". Essa ferramenta poderosa permite remover qualquer bloco do tabuleiro, sendo uma salvação estratégica em momentos críticos. O jogo só termina se o tabuleiro encher E você não tiver mais martelos!
 
-## 🎮 Funcionalidades Principais
+Ranking Persistente 🏆: Seu nome e pontuação são salvos em um arquivo binário (ranking.bin) ao final de cada partida. O ranking é exibido em ordem decrescente, permitindo que você dispute as melhores pontuações.
 
-✅ **Tabuleiro 10×5:** blocos “caem” até o fundo da matriz.  
-✅ **Fusão automática:** números iguais se unem com multiplicadores.  
-✅ **Gravidade realista:** blocos acima de espaços vazios descem automaticamente.  
-✅ **Martelos:** a cada 10.000 pontos, o jogador ganha um martelo.  
-✅ **Ranking persistente:** pontuações salvas no arquivo `ranking.bin`.  
-✅ **Menus interativos:** opções de jogar, ver ranking, instruções e configurações.  
-✅ **Armazenamento binário:** ranking gravado em formato eficiente.  
+Interface de Terminal Clássica 👾: Toda a experiência do jogo acontece diretamente no terminal, com uma grade visual que é atualizada a cada jogada.
 
----
+Multiplataforma: O código foi escrito para ser compatível com Windows e sistemas baseados em Unix (Linux, macOS), graças à limpeza de tela condicional.
 
-## 🧩 Estrutura do Projeto
+🛠️ Propósito e Aprendizado
+Este projeto foi fundamental para aplicar e solidificar diversos conceitos da programação em C:
 
-| Arquivo | Descrição |
-|----------|------------|
-| `main.c` | Contém toda a lógica e execução do jogo |
-| `ranking.bin` | Armazena o ranking de jogadores em formato binário |
-| `numeros.txt` | Usado para leitura de números gerados ou salvos (placeholder) |
+Manipulação de Arquivos: Leitura de um arquivo de texto (numeros.txt) para gerar a sequência de peças do jogo e leitura/escrita em um arquivo binário (ranking.bin) para persistir os dados do ranking.
 
----
+Estruturas de Dados: Uso de structs para organizar os dados dos jogadores (nickname e pontuação) de forma limpa e eficiente.
+
+Arrays Multidimensionais: Implementação da lógica do jogo sobre uma matriz 2D que representa o tabuleiro.
+
+Algoritmos: Aplicação do algoritmo Bubble Sort para ordenar o ranking de jogadores.
+
+Modularização: O código é organizado em funções com responsabilidades claras (menu, renderização da grade, lógica de verificação, etc.), tornando-o mais legível e fácil de manter.
+
+Lógica de Jogo Complexa: Desenvolvimento de um loop de jogo robusto, com checagem de condições de vitória, derrota e interações em cascata.
